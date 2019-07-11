@@ -1,0 +1,33 @@
+{
+  "name": "container-uncertain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "docker:build": "docker build -t ggoodman/$(node -p 'require(\"./package.json\").name'):$(node -p 'require(\"./package.json\").version') .",
+    "docker:push": "docker push ggoodman/$(node -p 'require(\"./package.json\").name'):$(node -p 'require(\"./package.json\").version')",
+    "build": "npm run docker:build && npm run docker:push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggoodman/container-uncertain.git"
+  },
+  "keywords": [],
+  "author": "Geoff Goodman <geoff@goodman.dev> (https://geoff.goodman.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggoodman/container-uncertain/issues"
+  },
+  "homepage": "https://github.com/ggoodman/container-uncertain#readme",
+  "devDependencies": {
+    "@types/node": "^10.14.12"
+  },
+  "files": [
+    "lib"
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
